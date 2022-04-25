@@ -1,14 +1,17 @@
-//
-//  File.swift
-//  
-//
-//  Created by Kamil on 25/04/2022.
-//
-
 import Foundation
 
 class Player: Person {
     private(set) var number: Int
+    var numberString: String {
+        get {
+            if number < 10 {
+                return "#\(number)"
+            }
+            else {
+                return "#0\(number)"
+            }
+        }
+    }
     
     init(name: String, surname: String, gedner: Bool, number: Int) throws {
         
@@ -37,8 +40,6 @@ class Player: Person {
      
     }
     
-   
-    
     private enum CodingKeys: String, CodingKey {
         case number
         case name
@@ -46,9 +47,7 @@ class Player: Person {
         case gender
     }
     
-    
     enum PlayerError: Error {
         case numberOutOfRange
     }
-    
 }

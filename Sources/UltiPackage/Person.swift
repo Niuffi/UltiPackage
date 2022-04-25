@@ -1,14 +1,6 @@
-//
-//  File.swift
-//  
-//
-//  Created by Kamil on 25/04/2022.
-//
-
 import Foundation
 
 class Person: Codable {
-
     let name: String
     let surname: String
     let gender: Bool

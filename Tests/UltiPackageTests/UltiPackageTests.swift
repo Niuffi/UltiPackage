@@ -2,10 +2,18 @@ import XCTest
 @testable import UltiPackage
 
 final class UltiPackageTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(UltiPackage().text, "Hello, World!")
+    
+    func JSONtest() throws {
+        let newPlayer = try Player(name: "Name", surname: "Surname", gedner: true, number: 21)
+        
+        //encoding
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let data = try encoder.encode(newPlayer)
+        print(String(data: data, encoding: .utf8)!)
+        
+        //decoding
+        let decoder = JSONDecoder()
+        let _ = try decoder.decode(Player.self, from: data)
     }
 }
