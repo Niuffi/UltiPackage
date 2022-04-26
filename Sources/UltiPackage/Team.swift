@@ -1,6 +1,6 @@
 import Foundation
 
-class Team: Codable {
+public class Team: Codable {
     private(set) var players = [Player]()
     
     func addPlayer(name: String, surname: String, gedner: Bool, number: Int) throws {
