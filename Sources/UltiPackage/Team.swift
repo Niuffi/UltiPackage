@@ -1,6 +1,8 @@
 import Foundation
 
-public class Team: Codable {
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
+public class Team: Codable, ObservableObject {
     private(set) var players = [Player]()
     
     func addPlayer(name: String, surname: String, gedner: Bool, number: Int) throws {
