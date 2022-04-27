@@ -13,14 +13,14 @@ class Player: Person {
         }
     }
     
-    init(name: String, surname: String, gedner: Bool, number: Int) throws {
+    init(name: String, surname: String, gender: Bool, number: Int) throws {
         
         guard 0...99 ~= number else {
             throw PlayerError.numberOutOfRange
         }
         
         self.number = number
-        try super.init(name: name, surname: surname, gedner: gedner)
+        try super.init(name: name, surname: surname, gender: gender)
     }
     
     required init(from decoder: Decoder) throws {
