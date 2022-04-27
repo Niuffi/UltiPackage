@@ -5,7 +5,7 @@ class Person: Codable {
     let surname: String
     let gender: Bool
     
-    init(name: String, surname: String, gedner: Bool) throws {
+    init(name: String, surname: String, gender: Bool) throws {
         
         guard name != "" else {
             throw PersonError.nameIsEmpty
@@ -17,7 +17,7 @@ class Person: Codable {
         
         self.name = name
         self.surname = surname
-        self.gender = gedner
+        self.gender = gender
     }
     
     private enum CodingKeys: String, CodingKey {
