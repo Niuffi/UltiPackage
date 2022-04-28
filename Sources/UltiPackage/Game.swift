@@ -3,7 +3,7 @@ import Foundation
 @available(iOS 13.0, *)
 @available(macOS 10.15, *)
 
-class Game: Codable, ObservableObject {
+public class Game: Codable, ObservableObject {
     var opponent: String
     var date: Date
     var score = Score()
@@ -21,7 +21,7 @@ struct Score: Codable {
     private(set) var home = 0
     private(set) var away = 0
     
-    init(){}
+    init() {}
     
     init(home: Int, away: Int) {
         self.home = home
